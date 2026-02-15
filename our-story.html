@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story | Mekson Digital Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Lato',sans-serif;background:#f4f4f4;color:#333;}
+
+.navbar{
+position:fixed;width:100%;top:0;left:0;
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 40px;background:rgba(0,0,0,0.7);z-index:1000;
+}
+.logo{color:#fff;font-size:22px;font-weight:bold;}
+.nav-links{display:flex;}
+.nav-links a{color:#fff;text-decoration:none;margin:0 15px;}
+.nav-links a:hover{color:#00d4ff;}
+.menu-toggle{display:none;color:#fff;font-size:22px;cursor:pointer;}
+
+.main{
+padding:120px 40px 60px;
+text-align:center;
+}
+
+.content-box{
+max-width:900px;
+margin:auto;
+background:#fff;
+padding:40px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:left;
+}
+
+.content-box h1{
+color:#ff6a00;
+margin-bottom:20px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.8);
+color:#fff;margin-top:50px;
+}
+
+@media(max-width:768px){
+.menu-toggle{display:block;}
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;left:0;width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 0;
+}
+.nav-links a{display:block;padding:10px 20px;}
+.nav-links.active{display:flex;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">Mekson Digital Hub</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="product.html">Products</a>
+<a href="sell.html">Sell</a>
+<a href="view-sales.html">View Sales</a>
+<a href="contact.html">Contact</a>
+</div>
+</div>
+
+<section class="main">
+<div class="content-box">
+<h1>Our Story</h1>
+<p>
+Mekson Digital Hub was created to empower software developers in Papua New Guinea.
+Our goal is to connect talented programmers, designers, and creators with clients
+who need digital solutions.
+</p>
+<br>
+<p>
+We believe PNG developers deserve a platform where they can showcase their
+websites, mobile apps, game projects, and software solutions for real business opportunities.
+</p>
+<br>
+<p>
+This platform bridges the gap between clients and developers, helping grow
+the local tech industry.
+</p>
+</div>
+</section>
+
+<footer>
+&copy; 2025 Mekson Digital Hub | All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

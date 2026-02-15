@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product Details | Mekson Digital Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Lato',sans-serif;background:#f4f4f4;color:#333;}
+
+.navbar{
+position:fixed;width:100%;top:0;left:0;
+display:flex;justify-content:space-between;align-items:center;
+padding:20px 40px;background:rgba(0,0,0,0.7);
+z-index:1000;
+}
+.logo{color:#fff;font-size:22px;font-weight:bold;}
+.nav-links{display:flex;}
+.nav-links a{color:#fff;text-decoration:none;margin:0 15px;}
+.nav-links a:hover{color:#00d4ff;}
+.menu-toggle{display:none;color:#fff;font-size:22px;cursor:pointer;}
+
+.main{
+padding:120px 40px 60px;
+}
+
+.product-container{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+background:#fff;
+padding:30px;
+border-radius:12px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.product-image{
+flex:1 1 300px;
+}
+.product-image img{
+width:100%;
+border-radius:10px;
+}
+
+.product-details{
+flex:1 1 300px;
+}
+.product-details h1{
+color:#ff6a00;
+margin-bottom:15px;
+}
+.price{
+color:#00d4ff;
+font-weight:bold;
+font-size:22px;
+margin-bottom:15px;
+}
+button{
+padding:12px 25px;
+background:linear-gradient(45deg,#ff6a00,#00d4ff);
+color:#fff;border:none;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.8);
+color:#fff;margin-top:50px;
+}
+
+@media(max-width:768px){
+.menu-toggle{display:block;}
+.nav-links{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;left:0;width:100%;
+background:rgba(0,0,0,0.9);
+padding:15px 0;
+}
+.nav-links a{display:block;padding:10px 20px;}
+.nav-links.active{display:flex;}
+.product-container{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">Mekson Digital Hub</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="product.html">Products</a>
+<a href="sell.html">Sell</a>
+<a href="view-sales.html">View Sales</a>
+<a href="user-login.html">Login</a>
+</div>
+</div>
+
+<section class="main">
+
+<div class="product-container">
+
+<div class="product-image">
+<img src="https://images.unsplash.com/photo-1616627980243-1a8e3097a9b8">
+</div>
+
+<div class="product-details">
+<h1>Modern Portfolio Template</h1>
+<p class="price">K50.00</p>
+<p>
+This professional and responsive HTML template is perfect for developers, freelancers,
+and small businesses in Papua New Guinea looking to showcase their services online.
+</p>
+<br>
+<button><i class="fa fa-shopping-cart"></i> Buy Now</button>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+&copy; 2025 Mekson Digital Hub | All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>View Sales | Mekson Digital Hub</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Lato', sans-serif; background:#f4f4f4; color:#333; }
+
+/* Navbar */
+.navbar{
+ position:fixed; width:100%; top:0; left:0;
+ display:flex; justify-content:space-between; align-items:center;
+ padding:20px 40px; background:rgba(0,0,0,0.7);
+ z-index:1000;
+}
+.logo{ font-size:22px; font-weight:bold; color:#fff; }
+
+.nav-links{ display:flex; }
+.nav-links a{
+ color:#fff; text-decoration:none; margin:0 15px;
+}
+.nav-links a:hover{ color:#00d4ff; }
+
+.menu-toggle{
+ display:none;
+ font-size:22px;
+ color:#fff;
+ cursor:pointer;
+}
+
+/* Main */
+.main{
+ padding:120px 40px 60px;
+ text-align:center;
+}
+.main h1{
+ font-size:38px;
+ margin-bottom:10px;
+}
+.main p{
+ margin-bottom:40px;
+ color:#555;
+}
+
+/* Dashboard Boxes */
+.dashboard{
+ background:#fff;
+ padding:30px;
+ border-radius:12px;
+ box-shadow:0 4px 10px rgba(0,0,0,0.1);
+ margin-bottom:40px;
+ text-align:left;
+}
+
+.dashboard h2{
+ color:#00d4ff;
+ margin-bottom:20px;
+ text-align:center;
+}
+
+/* Summary Cards */
+.summary{
+ display:flex;
+ flex-wrap:wrap;
+ gap:20px;
+ justify-content:space-between;
+}
+
+.summary-card{
+ flex:1 1 250px;
+ background:linear-gradient(45deg,#ff6a00,#00d4ff);
+ color:#fff;
+ padding:20px;
+ border-radius:10px;
+}
+
+.summary-card h3{
+ font-size:18px;
+ margin-bottom:10px;
+}
+
+/* Table */
+table{
+ width:100%;
+ border-collapse:collapse;
+ min-width:600px;
+}
+th,td{
+ padding:12px;
+ border-bottom:1px solid #ddd;
+}
+th{
+ background:#ff6a00;
+ color:#fff;
+}
+
+/* Account Form */
+form{
+ display:flex;
+ flex-direction:column;
+ gap:15px;
+}
+
+input{
+ padding:12px;
+ border-radius:8px;
+ border:1px solid #ccc;
+}
+
+button{
+ padding:12px;
+ background:linear-gradient(45deg,#ff6a00,#00d4ff);
+ color:#fff;
+ border:none;
+ border-radius:8px;
+ font-weight:bold;
+ cursor:pointer;
+}
+
+/* Footer */
+footer{
+ text-align:center;
+ padding:20px;
+ background:rgba(0,0,0,0.8);
+ color:#fff;
+ margin-top:50px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.menu-toggle{ display:block; }
+
+.nav-links{
+ display:none;
+ flex-direction:column;
+ position:absolute;
+ top:70px;
+ left:0;
+ width:100%;
+ background:rgba(0,0,0,0.9);
+ padding:15px 0;
+}
+
+.nav-links a{
+ display:block;
+ padding:10px 20px;
+}
+
+.nav-links.active{ display:flex; }
+
+.summary{
+ flex-direction:column;
+}
+
+table{
+ font-size:12px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+<div class="logo">Mekson Digital Hub</div>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="nav-links" id="navLinks">
+<a href="index.html">Home</a>
+<a href="purchase.html">Purchase Design</a>
+<a href="sell.html">Sell Design</a>
+<a href="view-sales.html">View Sales</a>
+<a href="user-login.html">Login</a>
+</div>
+</div>
+
+<section class="main">
+<h1>Sales & Account Management</h1>
+<p>Track your earnings, monitor product sales and manage your seller account.</p>
+
+<!-- SALES SUMMARY -->
+<div class="dashboard">
+<h2>Sales Summary</h2>
+
+<div class="summary">
+<div class="summary-card">
+<h3>Total Sales</h3>
+<p>15 Products Sold</p>
+</div>
+
+<div class="summary-card">
+<h3>Total Revenue</h3>
+<p>K 450.00</p>
+</div>
+
+<div class="summary-card">
+<h3>Pending Payout</h3>
+<p>K 120.00</p>
+</div>
+</div>
+</div>
+
+<!-- SALES TABLE -->
+<div class="dashboard">
+<h2>Recent Sales</h2>
+
+<div style="overflow-x:auto;">
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>Buyer</th>
+<th>Amount (K)</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portfolio Template</td>
+<td>John Doe</td>
+<td>50.00</td>
+<td>10 Feb 2026</td>
+<td>Completed</td>
+</tr>
+<tr>
+<td>Logo Pack</td>
+<td>Mary K.</td>
+<td>30.00</td>
+<td>08 Feb 2026</td>
+<td>Pending</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- ACCOUNT SETTINGS -->
+<div class="dashboard">
+<h2>Manage Account</h2>
+
+<form>
+<label>Full Name</label>
+<input type="text" value="Your Name">
+
+<label>Email</label>
+<input type="email" value="your@email.com">
+
+<label>Change Password</label>
+<input type="password" placeholder="New Password">
+
+<button type="submit"><i class="fa fa-save"></i> Update Account</button>
+</form>
+</div>
+
+</section>
+
+<footer>
+&copy; 2025 Mekson Digital Hub | All Rights Reserved
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
